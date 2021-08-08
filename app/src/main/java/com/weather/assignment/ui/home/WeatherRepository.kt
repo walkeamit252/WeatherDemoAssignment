@@ -1,10 +1,10 @@
 package com.weather.assignment.ui.home
 
 import android.util.Log
+import com.weather.assignment.BuildConfig
 import com.weather.assignment.model.WeatherResponse
 import com.weather.assignment.network.ApiServiceInterface
 import com.weather.assignment.network.ResponseCallBack
-import com.weather.assignment.utils.UrlConstants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,7 +24,7 @@ class WeatherRepository {
         /**
          * NOW GET THE DETAILS FROM API
          */
-        val call = ApiServiceInterface.create().getWeatherDetails(cityName, UrlConstants.APP_KEY)
+        val call = ApiServiceInterface.create().getWeatherDetails(cityName, BuildConfig.API_KEY)
         call.enqueue(object : Callback<WeatherResponse> {
             override fun onResponse(
                 call: Call<WeatherResponse>,

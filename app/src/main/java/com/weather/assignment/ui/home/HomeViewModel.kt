@@ -81,8 +81,8 @@ class HomeViewModel : BaseViewModel(), Observable,
                 ResponseCallBack<WeatherResponse> {
                 override fun onSuccess(value: WeatherResponse) {
                     when (value) {
-                        is WeatherResponse -> {
-                            var weatherResponse = value as? WeatherResponse
+                        else -> {
+                            val weatherResponse = value as? WeatherResponse
                             handleWeatherResponse(weatherResponse)
                         }
                     }

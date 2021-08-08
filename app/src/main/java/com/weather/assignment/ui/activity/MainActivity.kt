@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), ToolbarListener {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,9 +25,7 @@ class MainActivity : AppCompatActivity(), ToolbarListener {
         toolbar.title = title
     }
 
-    override fun setToolbarVisibility(value: Int) {
-
-    }
+    override fun setToolbarVisibility(value: Int) {}
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {

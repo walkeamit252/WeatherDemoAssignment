@@ -25,7 +25,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "SERVER_URL", '"http://api.openweathermap.org/data/2.5/"'
             buildConfigField "String", "BASE_IMAGE_URL", '"http://openweathermap.org/img/w/"'
-            buildConfigField "String", "API_KEY", '"http://openweathermap.org/img/w/"'
+            buildConfigField "String", "API_KEY", '"fae7190d7e6433ec3a45285ffcf55c86"'
         }
         release {
             minifyEnabled false

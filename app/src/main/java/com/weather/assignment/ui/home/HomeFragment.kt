@@ -41,7 +41,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), Lifecyc
 
     lateinit var weatherViewModel: HomeViewModel
 
-
     override fun getLayoutId(): Int {
         return R.layout.fragment_home
     }
