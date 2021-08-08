@@ -14,8 +14,9 @@ data class WeatherDetails(
     val dt: Int,
     val dt_txt: String,
     val main: Main,
-    val rain: Rain,
+    val rain: Rain?,
     val sys: Sys,
     val weather: List<Weather>,
-    val wind: Wind
+    val wind: Wind,
+    var city: String = ""
 ) : Parcelable, BaseObservable()

@@ -7,10 +7,19 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.weather.assignment.R
+import com.weather.assignment.databinding.ItemviewWeatherBinding
 import com.weather.assignment.listeners.WeatherClickListener
 import com.weather.assignment.model.WeatherDetails
 import com.weather.assignment.ui.adapter.viewholders.WeatherViewHolder
+import com.weather.assignment.ui.details.WeatherItemViewModel
+import com.weather.assignment.utils.WeatherDiffUtilsCallBack
 
+
+/**
+ * Created by Amit Walke on 08/08/21.
+ * walkeamit252@gmail.com
+ */
 
 class WeatherAdapter(var listWeather: ArrayList<WeatherDetails>) :
     RecyclerView.Adapter<WeatherViewHolder>() {
@@ -40,7 +49,6 @@ class WeatherAdapter(var listWeather: ArrayList<WeatherDetails>) :
 
         val binding: ItemviewWeatherBinding =
             DataBindingUtil.inflate(layoutInflater, R.layout.itemview_weather, parent, false)
-        DataBindingUtil.getDefaultComponent()
         return WeatherViewHolder(binding)
     }
 

@@ -7,7 +7,7 @@ package com.weather.assignment.utils
 
 interface BundleConstants {
     companion object {
-        val WEATHER_DETAILS = "WeatherDetails"
+        val WEATHER_DETAILS = "weatherDetails"
         val CITY_NAME = "cityName"
     }
 }

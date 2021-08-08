@@ -1,5 +1,6 @@
 package com.weather.assignment.network
 
+import com.weather.assignment.BuildConfig
 import com.weather.assignment.model.WeatherResponse
 import io.reactivex.Observable
 import okhttp3.OkHttpClient

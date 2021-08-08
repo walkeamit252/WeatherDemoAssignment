@@ -3,7 +3,7 @@ package com.weather.assignment.model
 import android.os.Parcelable
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
-import androidx.databinding.library.baseAdapters.BR
+import com.weather.assignment.BR
 import kotlinx.android.parcel.Parcelize
 
 /**

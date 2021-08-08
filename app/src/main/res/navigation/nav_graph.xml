@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.weather.assignment.ui.home.HomeFragment"
+        android:label="HomeNavFragment"
+        tools:layout="@layout/fragment_home">
+
+        <argument
+            android:name="weatherDetails"
+            app:argType="com.weather.assignment.model.WeatherDetails"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_detailsWeatherFragment"
+            app:destination="@id/detailsWeatherFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsWeatherFragment"
+        android:name="com.weather.assignment.ui.details.WeatherDetailsFragment"
+        android:label="Tv Show Fragment"
+        tools:layout="@layout/fragment_weatherdetails">
+        <argument
+            android:name="weatherDetails"
+            app:argType="com.weather.assignment.model.WeatherDetails"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>

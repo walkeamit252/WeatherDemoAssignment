@@ -2,7 +2,8 @@ package com.weather.assignment.ui.adapter.viewholders
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import com.weather.assignment.ui.adapter.WeatherItemViewModel
+import com.weather.assignment.BR
+import com.weather.assignment.ui.details.WeatherItemViewModel
 
 /**
  * Created by Amit Walke on 08/08/21.

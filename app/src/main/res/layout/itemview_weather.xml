@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="weatherItemViewModel"
+            type="com.weather.assignment.ui.details.WeatherItemViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRootItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        app:cardBackgroundColor="@color/card_cloudy"
+        app:cardCornerRadius="@dimen/dimen_6dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_2dp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWeatherType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="@{weatherItemViewModel.getWeatherTitle}"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewLine"
+                tools:text="Title" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textRainDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@{weatherItemViewModel.getWeatherDescription}"
+                android:textSize="@dimen/dimen_10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewWeatherType"
+                app:layout_constraintBottom_toTopOf="@+id/imgWeatherType"
+                app:layout_constraintStart_toEndOf="@+id/textViewWeatherType"
+                app:layout_constraintTop_toBottomOf="@+id/imgDate"
+                app:layout_constraintTop_toTopOf="@+id/textViewWeatherType"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="(Rain Desc)" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@{weatherItemViewModel.getWearherDay}"
+                android:textAllCaps="true"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Monday" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgDate"
+                android:layout_width="@dimen/dimen_30dp"
+                android:layout_height="@dimen/dimen_30dp"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDay"
+                app:srcCompat="@drawable/ic_calendar_24dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeatherDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/roboto_light"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:text="@{weatherItemViewModel.getWearherDate}"
+                app:layout_constraintStart_toEndOf="@+id/imgDate"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="12 Jan 2019" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeatherTempNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="@{weatherItemViewModel.normalTemperature}"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintEnd_toStartOf="@+id/imgClock"
+                app:layout_constraintStart_toEndOf="@+id/textViewDay"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="25" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgClock"
+                android:layout_width="@dimen/dimen_20dp"
+                android:layout_height="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/tvWeatherTime"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_alarm_clock" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeatherTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="@{weatherItemViewModel.getWeatherTime}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="12:30 PM" />
+
+            <View
+                android:id="@+id/viewLine"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"
+                android:layout_marginTop="@dimen/dimen_7dp"
+                android:layout_marginBottom="@dimen/dimen_7dp"
+                android:background="#808080"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgDate" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgWeatherType"
+                android:layout_width="@dimen/dimen_60dp"
+                android:layout_height="@dimen/dimen_60dp"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:textSize="@dimen/dimen_10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWeatherType"
+                app:srcCompat="@drawable/ic_calendar_24dp"
+                app:weatherImage="@{weatherItemViewModel.getWearherIcon}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeatherType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:text="@{weatherItemViewModel.getCloudyness}"
+                android:textSize="@dimen/dimen_12sp"
+                app:fontFamily="@font/roboto_light"
+                app:layout_constraintBottom_toBottomOf="@+id/imgWeatherType"
+                app:layout_constraintStart_toEndOf="@+id/imgWeatherType"
+                app:layout_constraintTop_toTopOf="@+id/imgWeatherType"
+                app:layout_constraintVertical_bias="0.392"
+                tools:text="Light Rain" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeatherTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="@{weatherItemViewModel.getTemperture}"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewLine"
+                tools:text="25" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgWindDetails"
+                android:layout_width="@dimen/dimen_30dp"
+                android:layout_height="@dimen/dimen_30dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvWeatherWind"
+                app:layout_constraintEnd_toStartOf="@+id/tvWeatherWind"
+                app:layout_constraintTop_toTopOf="@+id/tvWeatherWind"
+                app:layout_constraintVertical_bias="0.312"
+                app:srcCompat="@drawable/ic_wind" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeatherWind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_5dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="@{weatherItemViewModel.getWindDetails}"
+                android:textColor="#808080"
+                android:textSize="@dimen/dimen_12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWeatherTemp"
+                tools:text="12:30 PM" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/bottom_rounded_background"
+                android:padding="@dimen/dimen_5dp"
+                android:text="@{weatherItemViewModel.getWeatherDetailsMessage}"
+                android:textColor="@android:color/white"
+                app:fontFamily="@font/roboto_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgWeatherType" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
